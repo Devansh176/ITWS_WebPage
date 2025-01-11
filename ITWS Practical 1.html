@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website for ITWS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-in {
+      opacity: 0;
+      animation: slideIn 0.8s ease-out forwards;
+    }
+
+    /* Counter Animation */
+    .counter {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--counter-color, black);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans transition-colors duration-300">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">DevanshWeb</h1>
+      <nav class="hidden md:flex space-x-6 ml-auto">
+        <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#features" class="text-gray-700 hover:text-blue-600">Features</a>
+        <a href="#stats" class="text-gray-700 hover:text-blue-600">Stats</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+      <div class="flex items-center">
+        <button class="md:hidden text-gray-700 ml-4" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden bg-gray-100 p-4">
+      <a href="#home" class="block text-gray-700 hover:text-blue-600 mb-2">Home</a>
+      <a href="#features" class="block text-gray-700 hover:text-blue-600 mb-2">Features</a>
+      <a href="#stats" class="block text-gray-700 hover:text-blue-600 mb-2">Stats</a>
+      <a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="relative bg-blue-500 text-white text-center py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-4">Welcome to My Website</h2>
+      <p class="text-lg mb-6">The future of responsive, high-performance websites.</p>
+      <a href="#features" class="bg-white text-blue-500 px-6 py-3 rounded-lg hover:bg-gray-200">Explore Features</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" class="py-12">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-8">Our Stats</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="counter text-blue-500" data-target="1500">0</p>
+          <p class="text-gray-600">Happy Clients</p>
+        </div>
+        <div>
+          <p class="counter text-blue-500" data-target="300">0</p>
+          <p class="text-gray-600">Projects Completed</p>
+        </div>
+        <div>
+          <p class="counter text-blue-500" data-target="50">0</p>
+          <p class="text-gray-600">Team Members</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+          <h3 class="text-3xl font-bold text-center mb-8">Our Features</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md slide-in">
+              <h4 class="text-xl font-bold text-blue-500 mb-2">Fast Performance</h4>
+              <p class="text-gray-600">Optimized for blazing-fast load times.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md slide-in">
+              <h4 class="text-xl font-bold text-blue-500 mb-2">Mobile Friendly</h4>
+              <p class="text-gray-600">Designed to look perfect on any device.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md slide-in">
+              <h4 class="text-xl font-bold text-blue-500 mb-2">SEO Optimized</h4>
+              <p class="text-gray-600">Reach more users with enhanced SEO.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-8">Contact Us</h3>
+      <form class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700">Name</label>
+          <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700">Email</label>
+          <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg">
+        </div>
+        <button class="bg-blue-500 text-white px-6 py-3 rounded-lg w-full">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 DevanshWeb. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+</body>
+</html>
